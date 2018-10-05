@@ -1,3 +1,6 @@
+/*	probar el nuevo elemento `${}`
+*/
+
 let area = function (height, base){
 	return (base * height)/2;
 }

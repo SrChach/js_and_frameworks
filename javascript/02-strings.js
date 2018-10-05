@@ -1,3 +1,5 @@
+/*	Funciones con cadenas
+*/
 let platzom = (str) => {
 	let translation = str
 	if(str.toLowerCase().endsWith('ar'))
