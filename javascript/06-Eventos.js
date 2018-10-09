@@ -3,21 +3,23 @@
 "use strict"
 
 window.addEventListener('load', ()=>{	// Espera a que la pagina cargue completamente para actuar
-let boton = document. querySelector('#boton')
+	let boton = document. querySelector('#boton')
 
 	//	Click
-	boton.addEventListener('click', ()=>{
+	boton.addEventListener('click', function(){
 		alert('click')
+		this.style.border = "1px solid #ccc"
 	})
 
 	//	Mouse over
-	boton.addEventListener("mouseover", ()=>{
-		boton.style.background = 'yellow'
+	boton.addEventListener("mouseover", function(){
+		this.style.background = 'yellow'
+		//boton.style.background = 'yellow'
 	})
 
 	//	Mouse out
-	boton.addEventListener("mouseout", ()=>{
-		boton.style.background = '#ccc'
+	boton.addEventListener("mouseout", function(){
+		this.style.background = '#ccc'
 	})
 
 	//	Focus
