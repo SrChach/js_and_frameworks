@@ -32,8 +32,7 @@ get('https://swapi.co/api/people/1/')
 	})
 	.catch((err) => _error(err))
 
-/* Otra forma de hacerlo:
-
+/*	Promesa con fetch
 fetch('https://swapi.co/api/people/1/')
 	.then(response => response.json())
 	.then((json) => {
@@ -46,5 +45,4 @@ fetch('https://swapi.co/api/people/1/')
 		console.log(`${luke.name} nació en ${luke.homeworld}`)
 	})
 	.catch((err) => _error(err))
-
 */
