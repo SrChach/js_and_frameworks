@@ -4,13 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
+import { ZapatoComponent } from './zapato/zapato.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    VideojuegoComponent
+    VideojuegoComponent,
+    ZapatoComponent
   ],
   imports: [
+    BrowserModule.withServerTransition({appId:'angular'}),
     BrowserModule,
     AppRoutingModule
   ],

@@ -18,6 +18,9 @@
   </li>
 </ul>
 
-<videojuego></videojuego>
+<button (click)="ocultarVideojuegos()">Mostrar/ocultar videojugos</button>
+
+<videojuego *ngIf="mostrar_videojuegos"></videojuego>
+<zapato></zapato>
 
 <router-outlet></router-outlet>
