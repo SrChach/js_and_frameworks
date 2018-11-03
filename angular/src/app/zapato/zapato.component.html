@@ -1,1 +1,5 @@
 <h2>{{ titulo }}</h2>
+
+<ul>
+	<li *ngFor="let unzapato of zapatos">{{ unzapato.nombre }} - <strong>${{ unzapato.precio }}</strong></li>
+</ul>

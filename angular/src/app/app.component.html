@@ -1,28 +1,32 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Bienvenido a {{ config.titulo }}!
-  </h1>
+	<h1>
+		Bienvenido a {{ config.titulo }}!
+	</h1>
 </div>
-<div [ngStyle]="{'background': config.color}" >
-  <h2>{{ config.descripcion }}</h2>  
+<div [ngStyle]="{
+	'background': config.color,
+	'padding-bottom': '20px'
+}">
+	<h2>{{ config.descripcion }}</h2>  
 </div>
-
+<!--
 <ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
+	<li>
+		<h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+	</li>
+	<li>
+		<h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+	</li>
+	<li>
+		<h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+	</li>
 </ul>
 
 <button (click)="ocultarVideojuegos()">Mostrar/ocultar videojugos</button>
 
 <videojuego *ngIf="mostrar_videojuegos"></videojuego>
-<zapato></zapato>
+-->
+<zapatos></zapatos>
 
 <router-outlet></router-outlet>
