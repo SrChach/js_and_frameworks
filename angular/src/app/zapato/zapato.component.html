@@ -1,13 +1,13 @@
 <h2>{{ titulo }}</h2>
 
 <p>Marca reactiva</p>
-<p><input type="text" [(ngModel)]='mi_marca'/>
-<button (click)="getMarca()">Muestra marca!</button><button (click)="anadirMarca()">Añadir marca</button></p>
+<p><input type="text" [(ngModel)]='mi_marca' (blur)='onBlur()' (keyup.enter)='anadirMarca()'/>
+<button (click)="anadirMarca()">Añadir marca</button><button (click)="getMarca()">Muestra marca!</button></p>
 <p>{{ mi_marca }}</p>
 
 <p>Marcas disponibles!</p>
 <ul>
-	<li *ngFor="let marca of marcas; let i = index">{{ i + ' ' + marca }}</li>
+	<li *ngFor="let marca of marcas; let i = index"><button (click)="borrarMarca(i)">borrar</button>{{ i + ' ' + marca }}</li>
 </ul>
 
 <ul>

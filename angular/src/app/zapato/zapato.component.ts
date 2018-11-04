@@ -41,6 +41,17 @@ export class ZapatoComponent implements OnInit{
 	}
 
 	anadirMarca(){
-		this.marcas.push(this.mi_marca)
+		if(this.mi_marca != '')
+			this.marcas.push(this.mi_marca)
+		this.mi_marca = ''
 	}
+
+	borrarMarca(index){
+		this.marcas.splice(index, 1)
+	}
+
+	onBlur(){
+		console.log(`Haz salido del input`)
+	}
+
 }
