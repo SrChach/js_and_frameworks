@@ -1,8 +1,13 @@
 <h2>{{ titulo }}</h2>
 
+<p>Marca reactiva</p>
+<p><input type="text" [(ngModel)]='mi_marca'/>
+<button (click)="getMarca()">Muestra marca!</button><button (click)="anadirMarca()">Añadir marca</button></p>
+<p>{{ mi_marca }}</p>
+
 <p>Marcas disponibles!</p>
 <ul>
-	<li *ngFor="let marca of marcas">{{ marca }}</li>
+	<li *ngFor="let marca of marcas; let i = index">{{ i + ' ' + marca }}</li>
 </ul>
 
 <ul>
@@ -13,3 +18,15 @@
 		<span *ngIf="unzapato.precio <= 80" [style.background]="unzapato.precio <= 80 ? 'green' : 'white'">¡En Oferta!</span>
 	</li>
 </ul>
+
+
+<!-- 
+<ul [ngSwitch]="color">
+	<li *ngSwitchCase="'yellow'">
+		El color predominante es amarillo
+	</li>
+	<li *ngSwitchCase="'black'">
+		El color predominante es negro
+	</li>	
+</ul>
+-->

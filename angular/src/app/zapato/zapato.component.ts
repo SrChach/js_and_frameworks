@@ -8,10 +8,13 @@ import { Zapato } from '../model/zapato'
 export class ZapatoComponent implements OnInit{
 	public titulo: string = "Componente de zapato"
 	public zapatos: Array<Zapato>
-	public marcas: String[];
+	public marcas: String[]
+	public color: string
+	public mi_marca: string
 
 	constructor(){
-		this.marcas = new Array();
+		this.color = 'yellow'
+		this.marcas = new Array()
 		this.zapatos = [
 			new Zapato('Nike Airmax', 'Nike', 'Rojo', 190.12, true),
 			new Zapato('Reebook Classic', 'Reebok', 'Blanco', 80, true),
@@ -31,5 +34,13 @@ export class ZapatoComponent implements OnInit{
 			if(this.marcas.indexOf(actual.marca) < 0)
 				this.marcas.push(actual.marca)
 		})
+	}
+
+	getMarca(){
+		alert(this.mi_marca)
+	}
+
+	anadirMarca(){
+		this.marcas.push(this.mi_marca)
 	}
 }
