@@ -13,7 +13,7 @@
 <ul>
 	<li *ngFor="let unzapato of zapatos">
 		<span [ngStyle]="{ 'text-decoration': unzapato.stock ? 'none' : 'line-through' }">
-			{{ unzapato.nombre }} - <strong>$ {{ unzapato.precio }} </strong>
+			{{ unzapato.nombre }} - <strong [class.altoPrecio]="unzapato.precio > 80">$ {{ unzapato.precio }} </strong>
 		</span>
 		<span *ngIf="unzapato.precio <= 80" [style.background]="unzapato.precio <= 80 ? 'green' : 'white'">¡En Oferta!</span>
 	</li>
