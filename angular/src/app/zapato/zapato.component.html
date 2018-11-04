@@ -1,5 +1,15 @@
 <h2>{{ titulo }}</h2>
 
+<p>Marcas disponibles!</p>
 <ul>
-	<li *ngFor="let unzapato of zapatos">{{ unzapato.nombre }} - <strong>${{ unzapato.precio }}</strong></li>
+	<li *ngFor="let marca of marcas">{{ marca }}</li>
+</ul>
+
+<ul>
+	<li *ngFor="let unzapato of zapatos">
+		<span [ngStyle]="{ 'text-decoration': unzapato.stock ? 'none' : 'line-through' }">
+			{{ unzapato.nombre }} - <strong>$ {{ unzapato.precio }} </strong>
+		</span>
+		<span *ngIf="unzapato.precio <= 80" [style.background]="unzapato.precio <= 80 ? 'green' : 'white'">¡En Oferta!</span>
+	</li>
 </ul>
