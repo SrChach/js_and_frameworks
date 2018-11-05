@@ -6,14 +6,22 @@
 <p>{{ mi_marca }}</p>
 
 <p>Marcas disponibles!</p>
-<ul>
+<ul style="list-style: none">
 	<li *ngFor="let marca of marcas; let i = index"><button (click)="borrarMarca(i)">borrar</button>{{ i + ' ' + marca }}</li>
 </ul>
 
 <ul>
 	<li *ngFor="let unzapato of zapatos">
 		<span [ngStyle]="{ 'text-decoration': unzapato.stock ? 'none' : 'line-through' }">
-			{{ unzapato.nombre }} - <strong [class.altoPrecio]="unzapato.precio > 80">$ {{ unzapato.precio }} </strong>
+			{{ unzapato.nombre }} - 
+			<strong 
+				[class.altoPrecio]="unzapato.precio > 80"
+				[ngClass]="{
+					'fondoRojo': unzapato.precio > 80,
+					'subrayado': unzapato.marca == 'Nike'
+				}"
+			>$ {{ unzapato.precio }} 
+			</strong>
 		</span>
 		<span *ngIf="unzapato.precio <= 80" [style.background]="unzapato.precio <= 80 ? 'green' : 'white'">¡En Oferta!</span>
 	</li>
