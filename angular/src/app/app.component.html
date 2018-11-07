@@ -10,23 +10,14 @@
 }">
 	<h2>{{ config.descripcion }}</h2>  
 </div>
-<!--
-<ul>
-	<li>
-		<h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-	</li>
-	<li>
-		<h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-	</li>
-	<li>
-		<h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-	</li>
-</ul>
 
-<button (click)="ocultarVideojuegos()">Mostrar/ocultar videojugos</button>
+<nav>
+	<a [routerLink]="['/']">Home</a>&nbsp;
+	<a [routerLink]="['/zapatos']">zapatos</a>&nbsp;
+	<a [routerLink]="['/videojuegos']">Videojuegos</a>&nbsp;
+	<a [routerLink]="['/cursos']">Cursos</a>&nbsp;
+</nav>
 
-<videojuego *ngIf="mostrar_videojuegos"></videojuego>
--->
 <router-outlet></router-outlet>
 
 

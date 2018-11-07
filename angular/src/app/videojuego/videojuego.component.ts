@@ -10,7 +10,7 @@ export class VideojuegoComponent implements OnInit, DoCheck, OnDestroy{
 
 	// Construye el método
 	constructor(){
-		this.titulo = 'Componentes'
+		this.titulo = 'Videojuegos en "oferta"'
 		this.listado = 'Listado de los juegos más cheveres'
 		console.log('Elemento construido')
 	}

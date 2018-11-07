@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
 import { ZapatoComponent } from './zapato/zapato.component';
 import { HomeComponent } from './home/home.component'
+import { CursoComponent } from './curso/curso.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     VideojuegoComponent,
     ZapatoComponent,
-    HomeComponent
+    HomeComponent,
+    CursoComponent
   ],
   imports: [
     BrowserModule,
