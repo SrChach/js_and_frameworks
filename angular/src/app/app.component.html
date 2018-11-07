@@ -12,10 +12,10 @@
 </div>
 
 <nav>
-	<a [routerLink]="['/']">Home</a>&nbsp;
-	<a [routerLink]="['/zapatos']">zapatos</a>&nbsp;
-	<a [routerLink]="['/videojuegos']">Videojuegos</a>&nbsp;
-	<a [routerLink]="['/cursos']">Cursos</a>&nbsp;
+	<a [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a>&nbsp;
+	<a [routerLink]="['/zapatos']" [routerLinkActive]="['active']">zapatos</a>&nbsp;
+	<a [routerLink]="['/videojuegos']" [routerLinkActive]="['active']">Videojuegos</a>&nbsp;
+	<a [routerLink]="['/cursos']" [routerLinkActive]="['active']">Cursos</a>&nbsp;
 </nav>
 
 <router-outlet></router-outlet>

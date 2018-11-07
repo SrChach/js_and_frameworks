@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component'
 //	Array de configuracion de las rutas
 const routes: Routes = [
 	{ path: '', component: HomeComponent},
+	{ path: 'home', component: HomeComponent},
 	{ path: 'zapatos', component: ZapatoComponent},
 	{ path: 'videojuegos', component: VideojuegoComponent},
 	{ path: 'cursos', component: CursoComponent},
