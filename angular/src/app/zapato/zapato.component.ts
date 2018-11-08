@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core'
 import { Zapato } from '../model/zapato'
+import { ZapatoService } from '../services/zapato.service'
 
 @Component({
 	selector: 'zapatos',
-	templateUrl: './zapato.component.html'
+	templateUrl: './zapato.component.html',
+	providers: [ZapatoService]
 })
 export class ZapatoComponent implements OnInit{
 	public titulo: string = "Componente de zapato"
@@ -12,21 +14,17 @@ export class ZapatoComponent implements OnInit{
 	public color: string
 	public mi_marca: string
 
-	constructor(){
+	constructor(
+		private _ZapatoService: ZapatoService
+	){
 		this.color = 'yellow'
-		this.marcas = new Array()
-		this.zapatos = [
-			new Zapato('Nike Airmax', 'Nike', 'Rojo', 190.12, true),
-			new Zapato('Reebook Classic', 'Reebok', 'Blanco', 80, true),
-			new Zapato('Nike runner ND', 'Nike', 'Negro', 60, true),
-			new Zapato('Adidas Kolorz', 'Adidas', 'Gris', 180, false),
-			new Zapato('Adidas B&W', 'Adidas', 'Blanco con negro', 100, true)
-		]
+		this.marcas = new Array()	
 	}
 
 	ngOnInit(){
-		console.log(this.zapatos)
+		this.zapatos = this._ZapatoService.getZapatos()
 		this.getMarcas()
+		console.log(this._ZapatoService.getTexto())
 	}
 
 	getMarcas(){
@@ -41,7 +39,7 @@ export class ZapatoComponent implements OnInit{
 	}
 
 	anadirMarca(){
-		if(this.mi_marca != '')
+		if(this.mi_marca != '' && this.mi_marca != undefined)
 			this.marcas.push(this.mi_marca)
 		this.mi_marca = ''
 	}
