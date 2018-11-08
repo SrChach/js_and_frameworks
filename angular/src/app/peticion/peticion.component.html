@@ -1,4 +1,8 @@
 <input type="text" [(ngModel)]='userId' (keyup.enter)='cargaUsuario()'>
+<div *ngIf="!user">
+	{{mensaje}}
+</div>
+
 <div *ngIf="user">
 	<h3>Numero de cliente: {{user.id}}</h3>
 	<ul>

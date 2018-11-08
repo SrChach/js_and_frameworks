@@ -11,7 +11,7 @@ export class PeticionComponent implements OnInit {
 
 	public user: any
 	public userId: any = 1
-
+	public mensaje: string
 	constructor(
 		private _peticionService:  PeticionService
 	) { }
@@ -21,13 +21,17 @@ export class PeticionComponent implements OnInit {
 	}
 
 	cargaUsuario(){
+		this.user = false
+		this.mensaje = 'Cargando...'
 		this._peticionService.getUser(this.userId).subscribe(
 			result => {
-				console.log(result.data);
 				this.user = result.data
 			},
 			error => {
 				console.log(error);
+				this.mensaje = 'Error al cargar, intente de nuevo'
+				if(error.status == 404)
+					this.mensaje = 'usuario inexistente'
 			}
 		)
 	}
