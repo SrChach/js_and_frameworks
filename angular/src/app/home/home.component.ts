@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+public identificado: boolean = false
   constructor() { }
 
   ngOnInit() {
+  }
+
+  identificar(){
+  	this.identificado = true
+  }
+
+  salir(){
+  	this.identificado = false
   }
 
 }

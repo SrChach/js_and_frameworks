@@ -1,3 +1,12 @@
-<p>
-  home works!
-</p>
+<h2>Página principal</h2>
+
+
+<div *ngIf="identificado; else noIdentificado">
+	<h3>Usuario reconocido</h3>
+	<button (click)="salir()">Salir</button>
+</div>
+
+<ng-template #noIdentificado>
+	<p>Sesión no iniciada</p>
+	<button (click)="identificar()">Identificate</button>
+</ng-template>
