@@ -6,6 +6,7 @@ import { ZapatoComponent } from './zapato/zapato.component'
 import { VideojuegoComponent } from './videojuego/videojuego.component'
 import { CursoComponent } from './curso/curso.component'
 import { HomeComponent } from './home/home.component'
+import { PeticionComponent } from './peticion/peticion.component'
 
 //	Array de configuracion de las rutas
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
 	{ path: 'videojuegos', component: VideojuegoComponent},
 	{ path: 'cursos', component: CursoComponent},
 	{ path: 'cursos/:nombre/:followers', component: CursoComponent},
+	{ path: 'peticion', component: PeticionComponent},
 	{ path: '**', component: HomeComponent }
 ];
 

@@ -1,0 +1,9 @@
+<input type="text" [(ngModel)]='userId' (keyup.enter)='cargaUsuario()'>
+<div *ngIf="user">
+	<h3>Numero de cliente: {{user.id}}</h3>
+	<ul>
+		<li>Nombre: {{user.first_name}}</li>
+		<li>Apellido: {{user.last_name}}</li>
+	</ul>
+	<img src="{{user.avatar}}" alt="Userxd" width="200">
+</div>

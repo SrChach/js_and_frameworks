@@ -1,14 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
 
 //  Import del router
 import { AppRoutingModule, appRoutingProviders } from './app-routing.module';
+
+//  Imports de clases hechas por nosotros
 import { AppComponent } from './app.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
 import { ZapatoComponent } from './zapato/zapato.component';
 import { HomeComponent } from './home/home.component'
-import { CursoComponent } from './curso/curso.component'
+import { CursoComponent } from './curso/curso.component';
+import { PeticionComponent } from './peticion/peticion.component'
 
 @NgModule({
   declarations: [
@@ -16,12 +20,14 @@ import { CursoComponent } from './curso/curso.component'
     VideojuegoComponent,
     ZapatoComponent,
     HomeComponent,
-    CursoComponent
+    CursoComponent,
+    PeticionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     appRoutingProviders
