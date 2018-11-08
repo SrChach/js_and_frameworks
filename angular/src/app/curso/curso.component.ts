@@ -20,6 +20,12 @@ export class CursoComponent implements OnInit {
 			this.nombre = parametros.nombre
 			//	Nota: el '+' te lo convierte a number, para que sea válido
 			this.followers = +parametros.followers
+			if(this.nombre == 'ninguno')
+				this._router.navigate(['/'])
 		})
+	}
+
+	redirigir(){
+		this._router.navigate(['/zapatos'])
 	}
 }
