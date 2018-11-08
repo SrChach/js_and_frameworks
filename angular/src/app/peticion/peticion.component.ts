@@ -11,6 +11,7 @@ export class PeticionComponent implements OnInit {
 
 	public user: any
 	public userId: any = 1
+	public fecha: any
 	public mensaje: string
 	constructor(
 		private _peticionService:  PeticionService
@@ -18,6 +19,7 @@ export class PeticionComponent implements OnInit {
 
 	ngOnInit() {
 		this.cargaUsuario()
+		this.fecha = new Date()
 	}
 
 	cargaUsuario(){
