@@ -14,6 +14,7 @@ const routes: Routes = [
 	{ path: 'zapatos', component: ZapatoComponent},
 	{ path: 'videojuegos', component: VideojuegoComponent},
 	{ path: 'cursos', component: CursoComponent},
+	{ path: 'cursos/:nombre/:followers', component: CursoComponent},
 	{ path: '**', component: HomeComponent }
 ];
 
