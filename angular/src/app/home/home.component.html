@@ -1,6 +1,21 @@
 <h2>Página principal</h2>
 
+<h2>Página principal</h2>
 
+
+<div *ngIf="identificado; then logged else unlogged"></div>
+
+<ng-template #logged>
+	<h3>Usuario reconocido</h3>
+	<button (click)="salir()">Salir</button>
+</ng-template>
+
+<ng-template #unlogged>
+	<p>Sesión no iniciada</p>
+	<button (click)="identificar()">Identificate</button>
+</ng-template>
+
+<!-- Otra forma de hacerlo
 <div *ngIf="identificado; else noIdentificado">
 	<h3>Usuario reconocido</h3>
 	<button (click)="salir()">Salir</button>
@@ -10,3 +25,5 @@
 	<p>Sesión no iniciada</p>
 	<button (click)="identificar()">Identificate</button>
 </ng-template>
+
+-->
