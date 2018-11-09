@@ -6,6 +6,9 @@ import { HttpClientModule } from '@angular/common/http'
 //  Import del router
 import { AppRoutingModule, appRoutingProviders } from './app-routing.module';
 
+// Pipes
+import { CalculadoraPipe } from './pipes/calculadora.pipe'
+
 //  Imports de clases hechas por nosotros
 import { AppComponent } from './app.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
@@ -21,7 +24,8 @@ import { PeticionComponent } from './peticion/peticion.component'
     ZapatoComponent,
     HomeComponent,
     CursoComponent,
-    PeticionComponent
+    PeticionComponent,
+    CalculadoraPipe
   ],
   imports: [
     BrowserModule,
