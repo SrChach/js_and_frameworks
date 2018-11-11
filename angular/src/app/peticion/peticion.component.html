@@ -20,3 +20,26 @@
 	</ul>
 	<img src="{{user.avatar}}" alt="Userxd" width="200">
 </div>
+
+<hr>
+<h2>Crear usuario</h2>
+
+<form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
+	<p>
+		<label for="name">Nombre</label>
+		<input type="text" name="name" #name="ngModel" [(ngModel)]="reqres_usr.name" required><br>
+		<span *ngIf="name.touched && !name.valid">Nombre requerido</span>
+
+		<br><label for="job">Trabajo</label>
+		<input type="text" name="job" #job="ngModel" [(ngModel)]="reqres_usr.job" required><br>
+		<span *ngIf="job.touched && !job.valid">Trabajo requerido</span>
+	</p>
+
+	<input type="submit" value="Guardar usuario" [disabled]="!formulario.form.valid">
+</form>
+
+<div *ngIf="usuario_guardado">
+	<h3>El usuario se ha guardado</h3>
+	<h4>Nombre: {{usuario_guardado.name}} - Trabajo: {{usuario_guardado.job}}</h4>
+	<h4></h4>
+</div>

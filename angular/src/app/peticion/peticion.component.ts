@@ -13,6 +13,11 @@ export class PeticionComponent implements OnInit {
 	public userId: any = 1
 	public fecha: any
 	public mensaje: string
+	public reqres_usr: any = {
+		"name":"",
+		"job":""
+	}
+	public usuario_guardado:any = null
 	constructor(
 		private _peticionService:  PeticionService
 	) { }
@@ -34,6 +39,19 @@ export class PeticionComponent implements OnInit {
 				this.mensaje = 'Error al cargar, intente de nuevo'
 				if(error.status == 404)
 					this.mensaje = 'usuario inexistente'
+			}
+		)
+	}
+
+	onSubmit(form){
+		this._peticionService.addUser(this.reqres_usr).subscribe(
+			response => {
+				this.usuario_guardado = response
+				form.reset()
+			},
+			error => {
+				this.usuario_guardado = null
+				console.log(error)
 			}
 		)
 	}
