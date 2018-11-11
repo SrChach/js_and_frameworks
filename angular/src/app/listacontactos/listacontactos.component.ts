@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Periodista } from '../model/periodista'
 import { PeriodistaService } from '../services/periodista.service'
 import { RouterModule, Routes, Router } from '@angular/router'
@@ -10,7 +10,7 @@ import { RouterModule, Routes, Router } from '@angular/router'
 	providers: [PeriodistaService]
 })
 export class ListacontactosComponent implements OnInit {
-	public titulo: string = "Lista de contactos"
+	@Input() public titulo: string
 	public periodistas: Array<Periodista>
 
 	constructor(

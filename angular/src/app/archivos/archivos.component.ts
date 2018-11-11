@@ -14,7 +14,7 @@ import { Globals } from '../globals'
 export class ArchivosComponent implements OnInit {
 	public archivos: Array<Archivo>
 	public seleccionados: Array<Archivo> = []
-	public title: string = 'Selecciona tus archivos para difundir'
+	public title: string = 'Compartir archivos de emergencia con'
 
 	constructor(
 		private _router: Router,
