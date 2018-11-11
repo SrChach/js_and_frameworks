@@ -48,6 +48,7 @@ export class PeticionComponent implements OnInit {
 			response => {
 				this.usuario_guardado = response
 				form.reset()
+				console.log(response)
 			},
 			error => {
 				this.usuario_guardado = null

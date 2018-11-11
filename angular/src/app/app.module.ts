@@ -16,7 +16,9 @@ import { ZapatoComponent } from './zapato/zapato.component';
 import { HomeComponent } from './home/home.component'
 import { CursoComponent } from './curso/curso.component';
 import { PeticionComponent } from './peticion/peticion.component';
-import { ContactoComponent } from './contacto/contacto.component'
+import { ContactoComponent } from './contacto/contacto.component';
+import { ListacontactosComponent } from './listacontactos/listacontactos.component';
+import { ArchivosComponent } from './archivos/archivos.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ContactoComponent } from './contacto/contacto.component'
     CursoComponent,
     PeticionComponent,
     CalculadoraPipe,
-    ContactoComponent
+    ContactoComponent,
+    ListacontactosComponent,
+    ArchivosComponent
   ],
   imports: [
     BrowserModule,

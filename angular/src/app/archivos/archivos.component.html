@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+		<h4>Archivos a subir</h4>&nbsp;&nbsp; 
+		<button type="button" class="btn btn-outline-secondary" (click)="guardarArchivos()">Marcar para subir</button>
+	</div>
+	<table class="table table-hover table-responsive">
+		<thead>
+			<tr>
+				<th scope="col">subir</th>
+				<th scope="col">Nombre del archivo</th>
+				<th scope="col">Modificado</th>
+				<th scope="col">Tamaño</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let archivo of archivos" (click)="archivo.selected = !archivo.selected">
+				<th scope="row"><span *ngIf='archivo.selected'>o</span></th>
+				<td>{{archivo.nombre}}</td>
+				<td>{{archivo.ultima_modificacion}}</td>
+				<td>{{archivo.tamano}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

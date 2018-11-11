@@ -16,8 +16,8 @@ export class ContactoComponent implements OnInit {
 	}
 
 	onSubmit(form){
-		form.reset()
 		console.log(this.contacto_usuario)
+		form.reset()
 	}
 
 }

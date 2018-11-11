@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="row">
+		<h4>Lista de contactos&nbsp;&nbsp;</h4>
+		<button type="button" class="btn btn-outline-secondary" (click)="guardar_periodistas()">Guardar</button>
+	</div>
+	<br><br>
+	<div class="row justify-content-center">
+		<div *ngFor="let periodista of periodistas; let i = index" class="col-4 col-sm-3" (click)="periodista.selected = !periodista.selected">
+			<img src="{{ periodista.imagen }}" alt="imagen {{periodista.nombre}}" class="rounded-circle"><br>
+			{{ periodista.nombre }} {{ periodista.apellidos }} <br>
+			{{ periodista.email }} 
+			<input *ngIf="periodista.selected" type="radio" checked> <br>
+		</div>
+	</div>
+</div>
+
+<app-archivos></app-archivos>
