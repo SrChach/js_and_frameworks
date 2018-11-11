@@ -15,7 +15,8 @@ export class ContactoComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	onSubmit(){
+	onSubmit(form){
+		form.reset()
 		console.log(this.contacto_usuario)
 	}
 
