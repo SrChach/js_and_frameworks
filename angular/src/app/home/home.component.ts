@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   public identificado: boolean = false
-  @Input() public cadena: string
+  @Input() cadena: string
   constructor() { }
 
   ngOnInit() {

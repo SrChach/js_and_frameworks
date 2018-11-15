@@ -18,7 +18,10 @@ import { CursoComponent } from './curso/curso.component';
 import { PeticionComponent } from './peticion/peticion.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { ListacontactosComponent } from './listacontactos/listacontactos.component';
-import { ArchivosComponent } from './archivos/archivos.component'
+import { ArchivosComponent } from './archivos/archivos.component';
+import { HijoComponent } from './hijo/hijo.component';
+import { PadreComponent } from './padre/padre.component';
+import { BlancoComponent } from './blanco/blanco.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { ArchivosComponent } from './archivos/archivos.component'
     CalculadoraPipe,
     ContactoComponent,
     ListacontactosComponent,
-    ArchivosComponent
+    ArchivosComponent,
+    HijoComponent,
+    PadreComponent,
+    BlancoComponent
   ],
   imports: [
     BrowserModule,

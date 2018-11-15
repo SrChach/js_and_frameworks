@@ -10,6 +10,7 @@ import { PeticionComponent } from './peticion/peticion.component'
 import { ContactoComponent } from './contacto/contacto.component'
 import { ListacontactosComponent } from './listacontactos/listacontactos.component'
 import { ArchivosComponent } from './archivos/archivos.component'
+import { BlancoComponent } from './blanco/blanco.component'
 
 //	Array de configuracion de las rutas
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
 	{ path: 'contacto', component: ContactoComponent },
 	{ path: 'lista_contactos', component: ListacontactosComponent },
 	{ path: 'archivos', component: ArchivosComponent },
+	{ path: 'blanco', component: BlancoComponent },
 	{ path: '**', component: HomeComponent }
 ];
 

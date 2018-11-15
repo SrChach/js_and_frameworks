@@ -10,7 +10,7 @@ import { RouterModule, Routes, Router } from '@angular/router'
 	providers: [PeriodistaService]
 })
 export class ListacontactosComponent implements OnInit {
-	@Input() public titulo: string
+	@Input() titulo: string
 	public periodistas: Array<Periodista>
 
 	constructor(
