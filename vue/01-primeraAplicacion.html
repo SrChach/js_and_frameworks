@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div class="vue">
+		<span>{{ mensaje }}</span>
+	</div>
+
+	<script>
+		let vm = new Vue ({
+			el: '.vue',
+			data: {
+				mensaje : "Hola mundo desde Vue!!"
+			},
+			methods: {}
+		})
+	</script>
+</body>
+</html>
