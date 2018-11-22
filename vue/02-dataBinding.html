@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	
+	<div id="bind">
+		<img v-bind:src="src" alt="">
+		<!--
+			sirve también <img :src="src">
+		-->
+	</div>
+
+	<script>
+		let bind = new Vue({
+			el: '#bind',
+			data: { 
+				src: "https://www.vuemastery.com/images/lgo-vue-news.svg"
+			}
+		})
+	</script>
+</body>
+</html>
