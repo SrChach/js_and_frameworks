@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
@@ -7,7 +7,13 @@
 </head>
 <body>
 	<div class="vue">
-		<span>{{ mensaje }}</span>
+		<span>
+			{{ mensaje }}
+			<br>
+			{{ mostrarMensaje() }}
+			<br>
+			desde Método: {{ desdeMetodo() }}
+		</span>
 	</div>
 
 	<script>
@@ -16,7 +22,14 @@
 			data: {
 				mensaje : "Hola mundo desde Vue!!"
 			},
-			methods: {}
+			methods: {
+				mostrarMensaje: function(){
+					return "Aprende Vue.js fácilmente"
+				},
+				desdeMetodo: function(){
+					return this.mensaje
+				}
+			},
 		})
 	</script>
 </body>
