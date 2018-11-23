@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	
+	<div id="vm">
+		<h3>{{ mensaje }}</h3>
+		<button @click="mensaje = 'nue-ve-ci-to uwur'">Cambuar mensaje</button>
+		<button @click="destruir()">Destruir</button>
+	</div>
+
+	<script>
+		let bind = new Vue({
+			el: '#vm',
+			data: { 
+				mensaje: "Este es el mensaje"
+			},
+			methods: {
+				destruir: function(){
+					this.$destroy()
+				}
+			},
+			beforeCreate: function(){
+				console.log("Antes de la creación del componente")
+			},
+			created: function(){
+				console.log("Componente creado")
+			},
+			beforeMount: function(){
+				console.log("Antes de montar el componente")
+			},
+			mounted: function(){
+				console.log("Componente montado")
+			},
+			beforeUpdate: function(){
+				console.log("antes de actualizar el componente")
+			},
+			updated: function(){
+				console.log("Elemento actualizado")
+			},
+			beforeDestroy: function(){
+				console.log("antes de eliminar el elemento")
+			},
+			destroyed: function(){
+				console.log("elemento destruido")
+			}
+
+		})
+	</script>
+</body>
+</html>
