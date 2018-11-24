@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	
+	<div id="vm">
+		<button @click="primero++">Primero</button>
+		<button @click="segundo++">Segundo</button>
+		<button @click="tercero++">Tercero</button>
+		<button @click="cuarto++">Cuarto</button>
+		<br>
+		{{ primero }} <br>
+		{{ segundo }} <br>
+		{{ tercero }} <br>
+		{{ cuarto }} <br>
+		Total: {{ total }}
+	</div>
+
+	<script>
+		let bind = new Vue({
+			el: '#vm',
+			data: { 
+				primero: 0,
+				segundo: 0,
+				tercero: 0,
+				cuarto: 0
+			},
+			/*	Las computed properties son variables calculadas automáticamente.
+			 *	Si algun valor del cual depende cambia, el valor de ésta cambia.
+			 */
+			computed: {
+				total: function(){
+					return this.primero + this.segundo + this.tercero + this.cuarto
+				}
+			}
+
+		})
+	</script>
+</body>
+</html>
