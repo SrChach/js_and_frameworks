@@ -30,7 +30,7 @@ export class HijoComponent implements OnInit {
 		//	El atributo 'p1', en el template del padre será llamado 'saludo'
 	@Input('saludo') p1: string
 		//	El atributo 'p2', en el template del padre será llamado 'declaración'
-	@Input('declaracion') p2: object
+	@Input('declaracion') p2: any
 
 		//	Solo se emite el evento cuando algo lo dispara
 	@Output() desde_el_hijo = new EventEmitter()
