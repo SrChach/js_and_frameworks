@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>Two way data binding</title>
+</head>
+<body>
+	<div id="vm">
+		<input type="text" v-model="nombre">
+		<hr>
+		Hola {{ nombre }}, Bienvenido!!
+	</div>
+
+	<script>
+		new Vue({
+			el:"#vm",
+			data: {
+				nombre: 'Carlos'
+			}
+		})
+	</script>
+</body>
+</html>
