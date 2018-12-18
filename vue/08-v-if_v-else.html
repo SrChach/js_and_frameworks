@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>v-html</title>
+</head>
+<body>
+
+	<div id="vm">
+		<div v-if="mostrar">
+			Primer div
+		</div>
+		<div v-else>Segundo div</div>
+		<button @click="mostrar = !mostrar">Cambiar valor</button>
+	</div>	
+
+	<script>
+		var algo = new Vue({
+			el: '#vm',
+			data: {
+				mostrar: true
+			}
+		})
+	</script>
+</body>
+</html>

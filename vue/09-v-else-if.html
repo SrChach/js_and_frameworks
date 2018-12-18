@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>v-html</title>
+</head>
+<body>
+
+	<div id="vm">
+		<div v-if="parrafo == 1">Parrafo unooo</div>
+		<div v-else-if="parrafo == 2">Parrafito 2</div>
+		<div v-else-if="parrafo == 3">El pafarro 3 xd</div>
+		<button @click="sumar()">Botón if-else</button>
+	</div>	
+
+	<script>
+		var algo = new Vue({
+			el: '#vm',
+			data: {
+				parrafo: 1
+			},
+			methods: {
+				sumar: function(){
+					this.parrafo++
+					if(this.parrafo > 3)
+						this.parrafo = 1
+				}
+			}
+		})
+	</script>
+</body>
+</html>

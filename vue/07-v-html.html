@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>v-html</title>
+</head>
+<body>
+
+	<div id="vm" v-html="html"></div>	
+
+	<script>
+		var algo = new Vue({
+			el: '#vm',
+			data: {
+				html: "<em>Elemento html!!</em>"
+			}
+		})
+	</script>
+</body>
+</html>

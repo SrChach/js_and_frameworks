@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>v-html</title>
+</head>
+<body>
+	<!-- La misma cosa que v-if, pero sin remover -->
+	<div id="vm">
+		<div v-show="parrafo"><h2>Un parrafo</h2><em>bien chido</em></div>
+		<button @click="parrafo = !parrafo">Ocultar</button>
+	</div>	
+
+	<script>
+		var algo = new Vue({
+			el: '#vm',
+			data: {
+				parrafo: true
+			}
+		})
+	</script>
+</body>
+</html>
