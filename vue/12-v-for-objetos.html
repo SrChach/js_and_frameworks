@@ -3,20 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<title>v-show</title>
+	<title>v-for-objects</title>
 </head>
 <body>
 	<!-- La misma cosa que v-if, pero sin remover -->
 	<div id="vm">
-		<div v-show="parrafo"><h2>Un parrafo</h2><em>bien chido</em></div>
-		<button @click="parrafo = !parrafo">Ocultar</button>
+		<ul>
+			<li v-for="(valor, llave) in empleado">{{llave}} - {{valor}}</li>
+		</ul>
 	</div>	
 
 	<script>
 		var algo = new Vue({
 			el: '#vm',
 			data: {
-				parrafo: true
+				empleado:{
+					nombre: "Nasho",
+					edad: "21",
+					nacionalidad: "Mexicano",
+					profesion: "Programador",
+					empresa: "The Membercheap Company",
+					telefono: '2131231312'
+				}
 			}
 		})
 	</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>v-for</title>
+</head>
+<body>
+	<!-- La misma cosa que v-if, pero sin remover -->
+	<div id="vm">
+		<ul>
+			<li v-for="(pais, indice) in paises">{{indice + 1}} - {{pais}}</li>
+		</ul>
+		<ul>
+			<li v-for="framework in frameworks">{{framework.nombre}}</li>
+		</ul>
+		<!-- with template -->
+		<ul>
+			<template v-for="pais in paises">
+				<li>{{pais}}</li>
+				<hr>
+			</template>
+		</ul>
+	</div>	
+
+	<script>
+		var algo = new Vue({
+			el: '#vm',
+			data: {
+				paises: ["Mexico", "Cuba", "USA"],
+				frameworks: [
+					{nombre: "Vue"},
+					{nombre: "Angular"},
+					{nombre: "React"}
+				]
+			}
+		})
+	</script>
+</body>
+</html>

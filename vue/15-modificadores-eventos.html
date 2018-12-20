@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>modificador-evento</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="modificadores">
+		<!-- Solo se ejecuta una vez -->
+		<button @click.once="alerting">sajkdsa</button>
+		<div 
+			style="height:300px;border:1px solid blue"
+			@mousemove='mostrarUbicacion'>
+			<div style="height:30px;border:1px solid red"
+				@mousemove.stop></div>
+		</div>
+		x: {{ x }}, y: {{ y }}
+	</div>
+	<script>
+		new Vue({
+			el: "#modificadores",
+			data:{
+				x:0,
+				y:0
+			},
+			methods: {
+				mostrarUbicacion:function(event){
+					this.x = event.clientX
+					this.y = event.clientY
+				},
+				alerting:function(){
+					alert('hola')
+				}
+			}
+		})
+	</script>
+</body>
+</html>

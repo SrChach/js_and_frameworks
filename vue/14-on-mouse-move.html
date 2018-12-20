@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>v-on-mousemoves - Coordenadas</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="evento">
+		<div 
+			style="height:300px;"
+			@mousemove='mostrarUbicacion'
+			@click="alertar"	
+			>
+		</div>
+		x:{{ x }}, y: {{ y }}
+	</div>
+	<script>
+		new Vue({
+			el: "#evento",
+			data: {
+				x:0,
+				y:0
+			},
+			methods:{
+				mostrarUbicacion:function(event){
+					this.x = event.clientX
+					this.y = event.clientY
+				},
+				alertar:function(){
+					alert('no clickees acá plocs xd')
+				}
+			}
+		})
+	</script>
+</body>
+</html>
