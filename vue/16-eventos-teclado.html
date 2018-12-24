@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>modificador-evento</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="modificadores">
+		<input type="text" :value="x">
+		<input type="text" 
+			@keyup.space="sumar(-1)" 
+			@keyup.ctrl.c="mensaje('no copies!!!')" 
+			placeholder="resta uno al pulsar espacio">
+		<button @click="sumar(7)">Sumar 7</button>
+	</div>
+	<script>
+		new Vue({
+			el: "#modificadores",
+			data:{
+				x:0
+			},
+			methods: {
+				sumar: function(num){
+					this.x += num
+				},
+				mensaje: function(msg){
+					alert(msg)
+				}
+			}
+		})
+	</script>
+</body>
+</html>

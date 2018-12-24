@@ -15,14 +15,20 @@
 			<div style="height:30px;border:1px solid red"
 				@mousemove.stop></div>
 		</div>
-		x: {{ x }}, y: {{ y }}
+		x: {{ x }}, y: {{ y }} <br>
+		contador: {{ contador }}
+		<input 
+			type="text"
+			@keyup.delete="sumar(-1)" 
+			@keyup.ctrl.c="sumar(1)"><!-- delete, space, enter -->
 	</div>
 	<script>
 		new Vue({
 			el: "#modificadores",
 			data:{
 				x:0,
-				y:0
+				y:0,
+				contador: 0
 			},
 			methods: {
 				mostrarUbicacion:function(event){
@@ -31,6 +37,9 @@
 				},
 				alerting:function(){
 					alert('hola')
+				},
+				sumar: function(num){
+					this.contador += num
 				}
 			}
 		})
