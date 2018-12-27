@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>modificador-evento</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<style>
+		.terminada {
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+<body>
+	<div id="lista">
+		<input type="text" v-model="nueva_tarea" @keyup.enter="anadir()"> <button @click='anadir()'>Agregar</button>
+		<ul>
+			<li v-for="(tarea, indice) in tareas">
+				<span :class="{ terminada : !tarea.isActive}">{{ tarea.titulo }}</span> 
+				<button @click="tarea.isActive = !tarea.isActive">
+					<template v-if="tarea.isActive">check</template>
+					<template v-else>uncheck</template>
+				</button>
+				<button @click="eliminar(indice)">x</button>
+			</li>
+		</ul>
+	</div>
+	<script>
+		new Vue({
+			el: '#lista',
+			data: {
+				titulo: "Cosas por hacer",
+				tareas: [
+					{
+						titulo: "Mejorar mi apariencia",
+						isActive: true
+					},
+					{
+						titulo: "Mejorar mi comunicación no verbal",
+						isActive: true
+					},
+					{
+						titulo: "Aprender a sargear",
+						isActive: true
+					}
+				],
+				nueva_tarea: ""
+			},
+			methods: {
+				anadir: function(){
+					if(this.nueva_tarea != '')
+						this.tareas.push({
+							titulo: this.nueva_tarea,
+							isActive: true
+						})
+					this.nueva_tarea = ''
+				},
+				eliminar: function(indice){
+					this.tareas.splice(indice, 1)
+				}
+			}
+		})
+	</script>
+</body>
+</html>
