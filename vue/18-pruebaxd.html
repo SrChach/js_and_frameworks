@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Componente Lista de Tareas</title>
+	<style>
+		.terminada { text-decoration: line-through; }
+	</style>
+</head>
+<body>
+	<div id="vue-container">
+		<componente listname="Cosas por hacer"></componente>
+		<componente listname="lista dos"></componente>
+		<componente listname="listita :3"></componente>
+		<componente listname="to do"></componente>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		Vue.component('componente', {
+			template: `
+				<div>
+					<h2>{{ listname }}</h2>
+					<input type="text" v-model="nueva_tarea" @keyup.enter="anadir()"> 
+					<button @click='anadir()'>Agregar</button>
+					<ul>
+						<li v-for="(tarea, indice) in tareas">
+							<span :class="{ terminada : !tarea.isActive}">{{ tarea.titulo }}</span> 
+							<button @click="tarea.isActive = !tarea.isActive">
+								<span v-if="tarea.isActive">check</span>
+								<span v-else>uncheck</span>
+							</button>
+							<button @click="eliminar(indice)">x</button>
+						</li>
+					</ul>
+				</div>
+			`,
+			props: ['listname'],
+			data: function(){
+				return { 
+					tareas: [
+						{
+							titulo: "Mejorar mi apariencia",
+							isActive: true
+						},
+						{
+							titulo: "Mejorar mi comunicación no verbal",
+							isActive: true
+						}
+					],
+					nueva_tarea: ""
+				}
+			},
+			methods: {
+				anadir: function(){
+					if(this.nueva_tarea != '')
+						this.tareas.push({
+							titulo: this.nueva_tarea,
+							isActive: true
+						})
+					this.nueva_tarea = ''
+				},
+				eliminar: function(indice){
+					this.tareas.splice(indice, 1)
+				}
+			}
+		})
+
+		new Vue({ el: '#vue-container' })
+	</script>
+</body>
+</html>

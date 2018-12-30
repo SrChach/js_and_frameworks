@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>modificador-evento</title>
+	<title>Lista de Tareas</title>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<style>
 		.terminada {
@@ -12,6 +12,7 @@
 </head>
 <body>
 	<div id="lista">
+		<h3>{{ titulo }}</h3>
 		<input type="text" v-model="nueva_tarea" @keyup.enter="anadir()"> <button @click='anadir()'>Agregar</button>
 		<ul>
 			<li v-for="(tarea, indice) in tareas">
@@ -28,7 +29,7 @@
 		new Vue({
 			el: '#lista',
 			data: {
-				titulo: "Cosas por hacer",
+				titulo: "Lista de tareas",
 				tareas: [
 					{
 						titulo: "Mejorar mi apariencia",
