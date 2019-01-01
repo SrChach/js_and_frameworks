@@ -26,7 +26,8 @@
 				//	required: true,
 				type: String,
 				default: "Lista de Tareas"
-			}
+			},
+			decrementar: {}
 		},
 		data(){
 			return { 
@@ -45,15 +46,20 @@
 		},
 		methods: {
 			anadir: function(){
-				if(this.nueva_tarea.trim() != '')
+				if(this.nueva_tarea.trim() != ''){
 					this.tareas.push({
 						titulo: this.nueva_tarea,
 						isActive: true
 					})
+					//	Forma uno de enviar datos, emite el evento 'incrementar', con el dato '1' al padre
+					this.$emit('incrementar', 1)
+				}
 				this.nueva_tarea = ''
 			},
 			eliminar: function(indice){
 				this.tareas.splice(indice, 1)
+				//	Forma dos de enviar datos, recibe un método en 'props' desde el padre, y lo ejecuta desde aqui
+				this.decrementar()
 			},
 			tituloMayusculas(){
 				return this.titulo.toUpperCase()

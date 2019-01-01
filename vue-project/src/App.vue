@@ -1,7 +1,12 @@
 <template>
 	<div id="app">
 		<!-- Hace un bind con la propiedad titulo y se la pasa al hijo -->
-		<app-list class="List" :titulo="otro_titulo"></app-list>
+		<app-list 
+			:titulo="otro_titulo"
+			v-on:incrementar="contador += $event"
+			:decrementar="decrementar"/>
+		<!-- Se manda el método 'decrementar' al hijo, para que éste responda cuando pase -->
+		Numero de Tareas: {{ contador }}
 	</div>
 </template>
 
@@ -17,15 +22,23 @@ export default {
 		appList
 	},
 	data(){
-		return { otro_titulo: 'I\'m a Title c:' }
-	}
+		return { 
+			otro_titulo: 'I\'m a Title c:',
+			contador: 2
+		}
+	},
 	/*	data: function(){} 
 	 *		es lo mismo que 
 	 *	data(){}
 	 */
+	methods: {
+		decrementar(){
+			this.contador--
+		}
+	}
 }
 </script>
 
 <style lang="scss">
-	.List { border: 1px solid red; }
+	
 </style>
