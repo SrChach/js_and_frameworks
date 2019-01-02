@@ -4,7 +4,7 @@
 		<app-list 
 			:titulo="otro_titulo"
 			v-on:incrementar="contador += $event"
-			:decrementar="decrementar"/>
+			v-on:ac/>
 		<!-- Se manda el método 'decrementar' al hijo, para que éste responda cuando pase -->
 		Numero de Tareas: {{ contador }}
 	</div>
@@ -13,6 +13,8 @@
 <script>
 //	Como tiene el export default, le damos el nombre que queramos a lo que importamos
 import appList from './ListComponent.vue'
+
+import { bus } from './main.js'
 
 export default {
 	/*	Aunque importemos, se carga el componente solo cuando lo especificamos en 'components'
@@ -31,10 +33,11 @@ export default {
 	 *		es lo mismo que 
 	 *	data(){}
 	 */
-	methods: {
-		decrementar(){
-			this.contador--
-		}
+	created(){
+		//	Cuando el hijo(o alguien más) llame el método del bus, ejecuta algo
+		bus.$on('actualizarContador', (numTareas) => {
+			this.contador = numTareas
+		})
 	}
 }
 </script>

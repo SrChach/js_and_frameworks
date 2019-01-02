@@ -17,6 +17,8 @@
 </template>
 
 <script>
+	import { bus } from './main.js'
+
 	export default {
 		/*	props: [ 'service_name' ] es sin validaciones
 		 *	props: { 'something' } es para validaciones
@@ -26,8 +28,7 @@
 				//	required: true,
 				type: String,
 				default: "Lista de Tareas"
-			},
-			decrementar: {}
+			}
 		},
 		data(){
 			return { 
@@ -58,8 +59,13 @@
 			},
 			eliminar: function(indice){
 				this.tareas.splice(indice, 1)
-				//	Forma dos de enviar datos, recibe un método en 'props' desde el padre, y lo ejecuta desde aqui
-				this.decrementar()
+				/*	Forma dos de enviar datos, recibe un método en 'props'
+				 *		desde el padre, y lo ejecuta desde aqui
+				 *	this.decrementar()
+				 */
+
+				 //	Manda a llamar el servicio, y le pasa un valor
+				bus.$emit('actualizarContador', this.tareas.length)
 			},
 			tituloMayusculas(){
 				return this.titulo.toUpperCase()
