@@ -1,7 +1,8 @@
 <template>
 	<form>
 		<!-- Slot recibe e imprime cualquier cantidad de html recibida desde el componente -->
-		<slot></slot>
+		<slot name="titulo"/>
+		<slot name="zlotxd"/>
 		<input type="email" placeholder="Pon tu correo">
 		<input type="password" placeholder="pon la contraseña">
 		<button>Iniciar sesión</button>
@@ -16,4 +17,4 @@
 	}
 </script>
 
-<style></style>
+<style>h1 { color: green; }</style>

@@ -9,8 +9,17 @@
 		Numero de Tareas: {{ contador }}
 
 		<Formulario>
-			<h3>Cambiar contraseña</h3>
+			<h3 slot="zlotxd">Cambiar contraseña</h3>
+			<h1 slot="titulo">Titulo del slot</h1>
 		</Formulario>
+
+		<br><br>
+	<div class="borde-rojo">
+		<button @click="componente = 'Formulario'">formulario</button>
+		<button @click="componente = 'app-list'">Listado</button>
+		<component :is="componente"></component>
+	</div>
+
 	</div>
 </template>
 
@@ -31,7 +40,8 @@ export default {
 	data(){
 		return { 
 			otro_titulo: 'I\'m a Title c:',
-			contador: 2
+			contador: 2,
+			componente: 'Formulario'
 		}
 	},
 	/*	data: function(){} 
@@ -48,5 +58,7 @@ export default {
 </script>
 
 <style lang="scss">
-	
+	.borde-rojo {
+		border: 2px solid red;
+	}
 </style>
