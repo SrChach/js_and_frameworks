@@ -7,13 +7,17 @@
 			v-on:ac/>
 		<!-- Se manda el método 'decrementar' al hijo, para que éste responda cuando pase -->
 		Numero de Tareas: {{ contador }}
+
+		<Formulario>
+			<h3>Cambiar contraseña</h3>
+		</Formulario>
 	</div>
 </template>
 
 <script>
 //	Como tiene el export default, le damos el nombre que queramos a lo que importamos
 import appList from './ListComponent.vue'
-
+import Formulario from './Formulario.vue'
 import { bus } from './main.js'
 
 export default {
@@ -21,7 +25,8 @@ export default {
 	 *	Vue convierte cualquier componente en camel case, dentro del template, a separado por guiones
 	 */
 	components: {
-		appList
+		appList,
+		Formulario
 	},
 	data(){
 		return { 
