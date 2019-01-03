@@ -17,7 +17,11 @@
 	<div class="borde-rojo">
 		<button @click="componente = 'Formulario'">formulario</button>
 		<button @click="componente = 'app-list'">Listado</button>
-		<component :is="componente"></component>
+		<!-- Usamos la etiqueta keep-alive para que el componente permanezca a pesar de ciertas acciones -->
+		<keep-alive>
+			<!-- Usamos la etiqueta component para cargar dinámicamente un componente -->
+			<component :is="componente"></component>
+		</keep-alive>
 	</div>
 
 	</div>

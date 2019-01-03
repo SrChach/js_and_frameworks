@@ -13,7 +13,16 @@
 	export default {
 		props: [
 			
-		]
+		],
+		destroyed(){
+			console.log('el formulario fue destruido!')
+		},
+		activated(){
+			console.log('formulario activado!')
+		},
+		deactivated(){
+			console.log('formulario desactivado!')
+		},
 	}
 </script>
 
